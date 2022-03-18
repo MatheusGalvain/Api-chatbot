@@ -72,7 +72,7 @@ export default class AddressService {
       .get(`/ws/${cep}/json/`)
       .then(resp => resp.data);
 
-      console.log('to ai', payload)
+      console.log('Endereço:', payload)
 
       const sql = 'INSERT INTO address(street, state, cep, neighborhood, city, number, complement, id_user) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)';
       const values = [payload.logradouro, payload.uf, cep, payload.bairro, payload.localidade, numberHouse, payload.complemento, idUser];

@@ -8,7 +8,7 @@ const Address = (router) => {
        
         const {body} = req;     
         const {resp, status} = await AddressService.createAddress(body.cep, body.idUser, body.numberHouse);
-        console.log('hehe', body)
+        console.log('Usuario:', body)
         res.status(status).send(resp);
     });
 
